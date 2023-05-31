@@ -7,9 +7,12 @@ plugins {
     id("kotlin-kapt")
 }
 
-val properties = Properties().apply {
-    load(rootProject.file("local.properties").reader())
-}
+
+
+// define major, minor, patch for version code and version name
+val major = 1
+val minor = 0
+val patch = 0
 
 android {
     namespace = "com.capstone.bangkit.calendivity"
@@ -19,8 +22,8 @@ android {
         applicationId = "com.capstone.bangkit.calendivity"
         minSdk = 21
         targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = (major*10000) + (minor*100) + patch
+        versionName = "$major.$minor.$patch"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,6 +34,11 @@ android {
 
     buildTypes {
         getByName("release") {
+
+            val properties = Properties().apply {
+                load(rootProject.file("/config/release.properties").reader())
+            }
+
             isDebuggable = false
 
             // Enables code shrinking, obfuscation, and optimization for only
@@ -50,15 +58,10 @@ android {
                 "proguard-rules.pro"
             )
 
-            // build config for token api
-            buildConfigField(
-                "String",
-                "TOKEN_API",
-                "${properties["API_KEY"]}"
-            )
-
             // build config for BASE_URL
-            buildConfigField("String", "BASE_URL", "\"https://api.github.com/\"")
+            buildConfigField("String",
+                "BASE_URL",
+                "${properties["BASE_URL"]}")
         }
 
         getByName("debug") {
@@ -67,15 +70,30 @@ android {
             isDebuggable = true
             isMinifyEnabled = false
 
-            // build config for TOKEN_API
-            buildConfigField(
-                "String",
-                "TOKEN_API",
-                "${properties["API_KEY"]}"
-            )
+            val properties = Properties().apply {
+                load(rootProject.file("/config/debug.properties").reader())
+            }
 
             // build config for BASE_URL
-            buildConfigField("String", "BASE_URL", "\"https://api.github.com/\"")
+            buildConfigField("String",
+                "BASE_URL",
+                "${properties["BASE_URL"]}")
+
+        }
+
+        create("beta"){
+            initWith(getByName("debug"))
+            applicationIdSuffix = ".beta"
+            versionNameSuffix = "-beta"
+
+            val properties = Properties().apply {
+                load(rootProject.file("/config/beta.properties").reader())
+            }
+
+            // build config for BASE_URL
+            buildConfigField("String",
+                "BASE_URL",
+                "${properties["BASE_URL"]}")
         }
     }
 

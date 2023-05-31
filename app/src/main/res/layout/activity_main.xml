@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:text="LOGIN"
+        android:text="@string/login"
         android:id="@+id/test"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
