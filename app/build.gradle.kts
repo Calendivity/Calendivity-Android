@@ -7,8 +7,6 @@ plugins {
     id("kotlin-kapt")
 }
 
-
-
 // define major, minor, patch for version code and version name
 val major = 1
 val minor = 0
@@ -16,13 +14,13 @@ val patch = 0
 
 android {
     namespace = "com.capstone.bangkit.calendivity"
-    compileSdk  = 32
+    compileSdk = 32
 
     defaultConfig {
         applicationId = "com.capstone.bangkit.calendivity"
         minSdk = 21
         targetSdk = 32
-        versionCode = (major*10000) + (minor*100) + patch
+        versionCode = (major * 10000) + (minor * 100) + patch
         versionName = "$major.$minor.$patch"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -59,9 +57,11 @@ android {
             )
 
             // build config for BASE_URL
-            buildConfigField("String",
+            buildConfigField(
+                "String",
                 "BASE_URL",
-                "${properties["BASE_URL"]}")
+                "${properties["BASE_URL"]}"
+            )
         }
 
         getByName("debug") {
@@ -75,26 +75,13 @@ android {
             }
 
             // build config for BASE_URL
-            buildConfigField("String",
+            buildConfigField(
+                "String",
                 "BASE_URL",
-                "${properties["BASE_URL"]}")
-
+                "${properties["BASE_URL"]}"
+            )
         }
 
-        create("beta"){
-            initWith(getByName("debug"))
-            applicationIdSuffix = ".beta"
-            versionNameSuffix = "-beta"
-
-            val properties = Properties().apply {
-                load(rootProject.file("/config/beta.properties").reader())
-            }
-
-            // build config for BASE_URL
-            buildConfigField("String",
-                "BASE_URL",
-                "${properties["BASE_URL"]}")
-        }
     }
 
     compileOptions {
@@ -111,7 +98,7 @@ dependencies {
     // default implementation
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.8.0")
+    implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     // Google Mobile Services
