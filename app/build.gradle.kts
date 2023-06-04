@@ -107,6 +107,10 @@ dependencies {
     // splash screen
     implementation("androidx.core:core-splashscreen:1.0.0")
 
+    //Logging
+    implementation("com.jakewharton.timber:timber:5.0.1")
+    implementation("com.orhanobut:logger:2.2.0")
+
     // test implementation
     testImplementation("junit:junit:4.13.2")
 

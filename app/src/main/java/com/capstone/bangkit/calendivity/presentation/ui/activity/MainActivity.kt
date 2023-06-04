@@ -1,4 +1,4 @@
-package com.capstone.bangkit.calendivity.presentation
+package com.capstone.bangkit.calendivity.presentation.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
