@@ -31,14 +31,13 @@ android {
     }
 
     signingConfigs {
-
         val properties = Properties().apply {
             load(rootProject.file("/keystore/release.properties").reader())
         }
 
         create("release") {
             keyAlias = properties["KEY_ALIAS"] as String
-            keyAlias = properties["KEY_PASSWORD"] as String
+            keyPassword = properties["KEY_PASSWORD"] as String
             storeFile = rootProject.file( properties["STORE_FILE"] as String)
             storePassword =  properties["STORE_PASSWORD"] as String
         }
@@ -47,6 +46,8 @@ android {
 
     buildTypes {
         getByName("release") {
+
+            signingConfig = signingConfigs.getByName("release")
 
             val properties = Properties().apply {
                 load(rootProject.file("/config/release.properties").reader())
@@ -80,7 +81,7 @@ android {
         }
 
         getByName("debug") {
-            isShrinkResources = false
+//            isShrinkResources = false
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
             isDebuggable = true
@@ -153,8 +154,30 @@ tasks.register("copyAPKDebug", Copy::class) {
     }
 }
 
+// copy release apk when build project is done
+tasks.register("copyAPKRelease", Copy::class) {
+    dependsOn("test")
+    val soureDir = layout.buildDirectory.dir("outputs/apk/release/app-release.apk")
+    val destDir = "$rootDir/apk"
+    from(soureDir)
+    into(destDir)
+    rename("app-release.apk", "calendivityRelease.apk")
+
+    // Untuk cek apakah aplikasi ada virus atau tidak, bisa diliath dari MD5 yang sudah di generate
+    doLast {
+        val filePath = File(destDir, "calendivityRelease.apk")
+        ant.withGroovyBuilder {
+            "checksum"("file" to filePath.path)
+        }
+    }
+}
+
 tasks.whenTaskAdded {
     if (this.name == "assembleDebug") {
         this.finalizedBy("copyAPKDebug")
+    }
+
+    if (this.name == "assembleRelease") {
+        this.finalizedBy("copyAPKRelease")
     }
 }

@@ -53,7 +53,7 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 
         <!--Windowbackground-->
-        <item name="android:windowBackground">@color/cardview_dark_background</item>
+        <item name="android:windowBackground">@color/md_theme_light_onPrimary</item>
 
     </style>
 
