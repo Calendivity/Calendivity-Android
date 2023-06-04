@@ -2,9 +2,10 @@ import org.jetbrains.kotlin.konan.properties.Properties
 
 plugins {
     id("com.android.application")
+    id("com.google.dagger.hilt.android")
     kotlin("android")
     id("kotlin-parcelize")
-    id("kotlin-kapt")
+    kotlin("kapt")
 }
 
 // define major, minor, patch for version code and version name
@@ -81,7 +82,7 @@ android {
         }
 
         getByName("debug") {
-//            isShrinkResources = false
+            isShrinkResources = false
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
             isDebuggable = true
@@ -128,12 +129,21 @@ dependencies {
     implementation("com.jakewharton.timber:timber:5.0.1")
     implementation("com.orhanobut:logger:2.2.0")
 
+    // Dagge-hilt
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+
     // test implementation
     testImplementation("junit:junit:4.13.2")
 
     // android test implementation
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }
 
 // copy debug apk when build project is done
