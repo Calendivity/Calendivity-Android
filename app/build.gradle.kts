@@ -30,6 +30,21 @@ android {
         viewBinding = true
     }
 
+    signingConfigs {
+
+        val properties = Properties().apply {
+            load(rootProject.file("/keystore/release.properties").reader())
+        }
+
+        create("release") {
+            keyAlias = properties["KEY_ALIAS"] as String
+            keyAlias = properties["KEY_PASSWORD"] as String
+            storeFile = rootProject.file( properties["STORE_FILE"] as String)
+            storePassword =  properties["STORE_PASSWORD"] as String
+        }
+    }
+
+
     buildTypes {
         getByName("release") {
 
@@ -65,6 +80,7 @@ android {
         }
 
         getByName("debug") {
+            isShrinkResources = false
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
             isDebuggable = true
@@ -105,7 +121,7 @@ dependencies {
     implementation("com.google.android.gms:play-services-auth:20.5.0")
 
     // splash screen
-    implementation("androidx.core:core-splashscreen:1.0.0")
+    implementation("androidx.core:core-splashscreen:1.0.1")
 
     //Logging
     implementation("com.jakewharton.timber:timber:5.0.1")
