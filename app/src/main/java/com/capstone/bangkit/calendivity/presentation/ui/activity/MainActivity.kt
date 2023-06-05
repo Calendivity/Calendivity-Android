@@ -8,16 +8,30 @@ import com.capstone.bangkit.calendivity.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+
         // splash screen
-        installSplashScreen()
+      val splashScreen =   installSplashScreen()
 
         super.onCreate(savedInstanceState)
         // define view binding
 
         binding = ActivityMainBinding.inflate(layoutInflater)
+
+        splashScreen.setOnExitAnimationListener { splashScreenViewProvider ->
+            splashScreenViewProvider.iconView
+                .animate()
+                .setDuration(
+                    300
+                ).translationY(-0f)
+                .alpha(0f)
+                .withEndAction {
+                    // After the fade out, remove the
+                    // splash and set content view
+                    splashScreenViewProvider.remove()
+                }.start()
+        }
+
         setContentView(binding.root)
 
-
-        //TODO : Implement Consenst Screen using google api
     }
 }

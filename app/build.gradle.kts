@@ -2,10 +2,10 @@ import org.jetbrains.kotlin.konan.properties.Properties
 
 plugins {
     id("com.android.application")
-    id("com.google.dagger.hilt.android")
     kotlin("android")
     id("kotlin-parcelize")
     kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 // define major, minor, patch for version code and version name
@@ -110,6 +110,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    hilt {
+        enableAggregatingTask = true
+    }
 }
 
 dependencies {
@@ -130,8 +134,8 @@ dependencies {
     implementation("com.orhanobut:logger:2.2.0")
 
     // Dagge-hilt
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.42")
+    kapt("com.google.dagger:hilt-android-compiler:2.42")
 
     // test implementation
     testImplementation("junit:junit:4.13.2")

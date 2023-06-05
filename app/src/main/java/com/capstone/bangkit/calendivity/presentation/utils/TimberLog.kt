@@ -7,7 +7,7 @@ import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
 import timber.log.Timber
 
-class TimberLog  : Application(){
+open class TimberLog  : Application(){
     override fun onCreate() {
         super.onCreate()
 
