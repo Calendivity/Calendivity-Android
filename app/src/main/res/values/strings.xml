@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--app name-->
     <string name="app_name">Calendivity</string>
-    <string name="login">LOGIN</string>
+
+    <!--Text-->
+    <string name="headline_on_boarding_1">Lorem Ipsum is\nsimply dummy text</string>
+    <string name="body_on_boarding_1">Lorem Ipsum is simply dummy text\n of the printing and typesetting industry.\n Lorem Ipsum has been the industry\'s</string>
+    <string name="headline_on_boarding_2">Lorem Ipsum is\nsimply dummy text</string>
+    <string name="body_on_boarding_2">Lorem Ipsum is simply dummy text\n of the printing and typesetting industry.\n Lorem Ipsum has been the industry\'s</string>
+    <string name="headline_on_boarding_3">Lorem Ipsum is\nsimply dummy text</string>
+    <string name="body_on_boarding_3">Lorem Ipsum is simply dummy text\n of the printing and typesetting industry.\n Lorem Ipsum has been the industry\'s</string>
+    <string name="btn_next">Next</string>
+
+    <!--Content desc-->
+    <string name="c_des_onboarding_1">Onboarding-1</string>
+    <string name="c_des_onboarding_2">Onboarding-2</string>
+    <string name="c_des_onboarding_3">Onboarding-3</string>
+    <string name="get_started">Get Started</string>
+    <string name="google">Google</string>
 </resources>

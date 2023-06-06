@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Calendivity</string>
-    <string name="login">LOGIN</string>
+    <string name="headline_on_boarding_1">Lorem Ipsum is\nsimply dummy text</string>
+    <string name="body_on_boarding_1">Lorem Ipsum is simply dummy text\n of the printing and typesetting industry.\n Lorem Ipsum has been the industry\'s</string>
+    <string name="google">Google</string>
 </resources>
