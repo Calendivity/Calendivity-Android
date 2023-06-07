@@ -3,6 +3,8 @@
     <!--app name-->
     <string name="app_name">Calendivity</string>
 
+<!--package name-->
+
     <!--Text-->
     <string name="headline_on_boarding_1">Lorem Ipsum is\nsimply dummy text</string>
     <string name="body_on_boarding_1">Lorem Ipsum is simply dummy text\n of the printing and typesetting industry.\n Lorem Ipsum has been the industry\'s</string>

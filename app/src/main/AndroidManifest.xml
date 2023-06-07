@@ -4,7 +4,7 @@
     package="com.capstone.bangkit.calendivity">
 
     <application
-        android:name=".presentation.utils.TimberLog"
+        android:name=".presentation.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        tools:ignore="LockedOrientationActivity">
         <activity
             android:name=".presentation.ui.activity.MainActivity"
             android:exported="true"

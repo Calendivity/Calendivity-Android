@@ -5,14 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.capstone.bangkit.calendivity.R
 import com.capstone.bangkit.calendivity.databinding.FragmentPagethreeBinding
+import com.capstone.bangkit.calendivity.presentation.di.OnboardingViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class Pagethree : Fragment() {
-
+    private val viewModel by viewModels<OnboardingViewModel>()
     private var _binding: FragmentPagethreeBinding? = null
     private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -21,10 +30,25 @@ class Pagethree : Fragment() {
         _binding = FragmentPagethreeBinding.inflate(inflater, container, false)
 
         _binding?.btnStarted?.setOnClickListener {
+            // save user preferences data to local
+            cacheOnboarding(true)
             findNavController().navigate(R.id.action_viewPagerFragment_to_loginFragment)
         }
 
+
         return binding.root
+    }
+
+    private fun cacheOnboarding(
+        isOnboarding: Boolean
+    ) {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                viewModel.cacheOnboarding(
+                    isOnboarding = isOnboarding
+                ).collect { }
+            }
+        }
     }
 
     override fun onDestroy() {
