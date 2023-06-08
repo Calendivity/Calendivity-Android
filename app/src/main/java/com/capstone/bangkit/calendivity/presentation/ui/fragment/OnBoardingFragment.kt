@@ -1,7 +1,6 @@
 package com.capstone.bangkit.calendivity.presentation.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +16,6 @@ import com.capstone.bangkit.calendivity.presentation.di.OnboardingViewModel
 import com.capstone.bangkit.calendivity.presentation.utils.OnboardingEvent
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 @AndroidEntryPoint
 class OnBoardingFragment : Fragment() {

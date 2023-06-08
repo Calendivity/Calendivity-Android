@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.capstone.bangkit.calendivity.R
@@ -26,6 +27,21 @@ class Pageone : Fragment() {
         _binding?.btnNext?.setOnClickListener {
             viewPager?.currentItem = 1
         }
+
+        // add callback stack for onboarding
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    _binding?.apply {
+                        if (viewPager?.currentItem == 0) {
+                            activity?.finish()
+                        } else if (viewPager?.currentItem!! <= 2) {
+                            viewPager.currentItem -= 1
+                        }
+                    }
+                }
+            })
 
         return binding.root
     }

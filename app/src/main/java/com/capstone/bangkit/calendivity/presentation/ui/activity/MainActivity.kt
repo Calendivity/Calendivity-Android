@@ -15,15 +15,15 @@ class MainActivity : AppCompatActivity() {
         val splashScreen = installSplashScreen()
 
         super.onCreate(savedInstanceState)
-        // define view binding
 
+        // define view binding
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         splashScreen.setOnExitAnimationListener { splashScreenViewProvider ->
             splashScreenViewProvider.iconView
                 .animate()
                 .setDuration(
-                    300
+                    350
                 ).translationY(-0f)
                 .alpha(0f)
                 .withEndAction {
