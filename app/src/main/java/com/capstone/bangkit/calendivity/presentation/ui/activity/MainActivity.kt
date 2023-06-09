@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         // define view binding
         binding = ActivityMainBinding.inflate(layoutInflater)
 
+        // splash screen animation
         splashScreen.setOnExitAnimationListener { splashScreenViewProvider ->
             splashScreenViewProvider.iconView
                 .animate()

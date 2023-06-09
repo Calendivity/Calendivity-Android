@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.fragment.OnBoardingFragment">
 
-    <!--Sementara karena ada bug di on boarding page pertama-->
+    <!--TODO : Sementara karena ada bug di on boarding page pertama-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,8 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/headline_on_boarding_1" />
-
+        tools:text="@string/on_boarding_fragment_bug" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -28,6 +27,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/headline_on_boarding_1" />
+        tools:text="@string/on_boarding_fragment_bug" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MyApp.Title.Large.Semibold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/on_boarding_fragment_bug" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

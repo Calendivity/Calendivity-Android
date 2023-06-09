@@ -6,11 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.capstone.bangkit.calendivity.databinding.FragmentLoginBinding
+import com.google.android.material.transition.MaterialSharedAxis
 
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // animation Forward and Backward
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.X, true)
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

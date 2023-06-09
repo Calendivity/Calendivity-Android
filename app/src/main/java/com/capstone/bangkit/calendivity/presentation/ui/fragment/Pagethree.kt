@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.capstone.bangkit.calendivity.R
 import com.capstone.bangkit.calendivity.databinding.FragmentPagethreeBinding
 import com.capstone.bangkit.calendivity.presentation.di.OnboardingViewModel
+import com.google.android.material.transition.MaterialSharedAxis
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -22,6 +23,14 @@ class Pagethree : Fragment() {
     private val viewModel by viewModels<OnboardingViewModel>()
     private var _binding: FragmentPagethreeBinding? = null
     private val binding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // animation Forward and Backward
+        exitTransition = MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ true)
+        reenterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +52,11 @@ class Pagethree : Fragment() {
                         activity?.finish()
                     }
                 })
-            findNavController().navigate(R.id.action_viewPagerFragment_to_loginFragment)
+
+            // navigate to login fragment
+            findNavController().navigate(
+                R.id.action_viewPagerFragment_to_loginFragment
+            )
         }
 
         return binding.root

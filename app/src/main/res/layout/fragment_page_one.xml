@@ -27,24 +27,26 @@
         app:layout_constraintTop_toTopOf="@id/guideline1" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:textAppearance="@style/TextAppearance.MyApp.Headline.Small.Bold"
         android:id="@+id/headline_page_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         android:text="@string/headline_on_boarding_1"
         android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MyApp.Headline.Small.Bold"
+        android:textColor="@color/md_theme_light_onTertiaryContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_page_one" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:textAppearance="@style/TextAppearance.MyApp.Body.Medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/body_on_boarding_1"
         android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MyApp.Body.Medium"
+        android:textColor="@color/md_theme_light_onTertiaryContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/headline_page_one" />

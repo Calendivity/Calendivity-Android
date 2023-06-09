@@ -50,6 +50,7 @@ class OnBoardingFragment : Fragment() {
             is OnboardingEvent.OnboardingCachedSuccess -> {
             }
             is OnboardingEvent.CachedonboardingFetchSuccess -> {
+                // if user already in onboarding page then user go login page otherwise onboarding page
                 if (event.isOnboarding) {
                     findNavController().navigate(R.id.action_onBoardingFragment_to_loginFragment)
                 } else {

@@ -17,51 +17,62 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/img_page_one"
+        android:id="@+id/img_login_page"
         android:layout_width="300dp"
         android:layout_height="225dp"
+        android:contentDescription="@string/c_des_login_page"
         android:src="@drawable/imagepagelogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline1"
-        android:contentDescription="@string/c_des_onboarding_1" />
+        app:layout_constraintTop_toTopOf="@id/guideline1" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:textAppearance="@style/TextAppearance.MyApp.Headline.Small.Bold"
-        android:layout_marginTop="15dp"
-        android:id="@+id/headline_page_two"
+        android:id="@+id/headline_login_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/headline_on_boarding_1"
+        android:layout_marginTop="30dp"
+        android:text="@string/headline_login_page"
         android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MyApp.Headline.Small.Bold"
+        android:textColor="@color/md_theme_light_onTertiaryContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_page_one"/>
+        app:layout_constraintTop_toBottomOf="@id/img_login_page" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:textAppearance="@style/TextAppearance.MyApp.Body.Medium"
-        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/headline_page_two"
-        android:text="@string/body_on_boarding_1"
+        android:layout_marginTop="10dp"
+        android:text="@string/body_login_page"
         android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MyApp.Body.Medium"
+        android:textColor="@color/md_theme_light_onTertiaryContainer"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
+        app:layout_constraintTop_toBottomOf="@id/headline_login_page" />
 
     <Button
-        app:iconGravity = "textStart"
-        app:icon ="@drawable/icons8_google_24"
         android:id="@+id/btn_next"
         style="@style/Widget.Material3.Button.Icon"
         android:layout_width="152dp"
         android:layout_height="65dp"
         android:text="@string/google"
         android:textAppearance="@style/TextAppearance.MyApp.Label.Large.Bold"
+        app:icon="@drawable/icons8_google_24"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guideline" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_to_continue"
+        android:textAppearance="@style/TextAppearance.MyApp.Title.Large.Semibold"
+        android:textColor="@color/md_theme_light_primary"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -83,6 +94,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8425" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

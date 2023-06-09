@@ -3,8 +3,6 @@
     <!--app name-->
     <string name="app_name">Calendivity</string>
 
-<!--package name-->
-
     <!--Text-->
     <string name="headline_on_boarding_1">Lorem Ipsum is\nsimply dummy text</string>
     <string name="body_on_boarding_1">Lorem Ipsum is simply dummy text\n of the printing and typesetting industry.\n Lorem Ipsum has been the industry\'s</string>
@@ -12,12 +10,17 @@
     <string name="body_on_boarding_2">Lorem Ipsum is simply dummy text\n of the printing and typesetting industry.\n Lorem Ipsum has been the industry\'s</string>
     <string name="headline_on_boarding_3">Lorem Ipsum is\nsimply dummy text</string>
     <string name="body_on_boarding_3">Lorem Ipsum is simply dummy text\n of the printing and typesetting industry.\n Lorem Ipsum has been the industry\'s</string>
+    <string name="headline_login_page">Lorem Ipsum is\nsimply dummy text</string>
+    <string name="body_login_page">Lorem Ipsum is simply dummy text\n of the printing and typesetting industry.\n Lorem Ipsum has been the industry\'s</string>
     <string name="btn_next">Next</string>
+    <string name="login_to_continue">Login to continue</string>
+    <string name="get_started">Get Started</string>
+    <string name="google">Google</string>
+    <string name="on_boarding_fragment_bug">Lorem Ipsum is\nsimply dummy text</string>
 
     <!--Content desc-->
     <string name="c_des_onboarding_1">Onboarding-1</string>
     <string name="c_des_onboarding_2">Onboarding-2</string>
     <string name="c_des_onboarding_3">Onboarding-3</string>
-    <string name="get_started">Get Started</string>
-    <string name="google">Google</string>
+    <string name="c_des_login_page">Login page</string>
 </resources>

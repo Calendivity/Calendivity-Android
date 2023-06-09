@@ -135,9 +135,11 @@ dependencies {
 
     // Dagge-hilt
     implementation("com.google.dagger:hilt-android:2.42")
+    kapt("com.google.dagger:hilt-android-compiler:2.42")
+
+    // navigation graph
     implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
     implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
-    kapt("com.google.dagger:hilt-android-compiler:2.42")
 
     // Preference Data Store
     implementation("androidx.datastore:datastore-preferences:1.0.0")
@@ -145,10 +147,11 @@ dependencies {
     // Corutine
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
 
+    // dots indicator
+    implementation("com.tbuonomo:dotsindicator:4.2")
+
     // test implementation
     testImplementation("junit:junit:4.13.2")
-
-    implementation("com.tbuonomo:dotsindicator:4.2")
 
     // android test implementation
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
