@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import com.capstone.bangkit.calendivity.BuildConfig
 import com.capstone.bangkit.calendivity.data.repo.UserPreferencesRepositoryImplementation
 import com.capstone.bangkit.calendivity.domain.usecases.UserPreferencesRepository
+import com.capstone.bangkit.calendivity.presentation.utils.Utils
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -17,7 +17,7 @@ import javax.inject.Singleton
 
 val Context.userDataStore: DataStore<Preferences> by preferencesDataStore(
     // just my preference of naming including the package name
-    name = BuildConfig.APPLICATION_ID
+    name = Utils.APPLICATION_ID
 )
 
 @Module

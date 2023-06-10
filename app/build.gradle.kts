@@ -39,8 +39,8 @@ android {
         create("release") {
             keyAlias = properties["KEY_ALIAS"] as String
             keyPassword = properties["KEY_PASSWORD"] as String
-            storeFile = rootProject.file( properties["STORE_FILE"] as String)
-            storePassword =  properties["STORE_PASSWORD"] as String
+            storeFile = rootProject.file(properties["STORE_FILE"] as String)
+            storePassword = properties["STORE_PASSWORD"] as String
         }
     }
 
@@ -79,11 +79,19 @@ android {
                 "BASE_URL",
                 "${properties["BASE_URL"]}"
             )
+
+            // build config for SERVER_AUTH
+            buildConfigField(
+                "String",
+                "SERVER_AUTH",
+                "${properties["SERVER_AUTH_CODE"]}"
+            )
         }
 
         getByName("debug") {
+            // TODO: nanti buat android client id dan web client id di gcp tersendiri sementara matiin dlu applicationidsuffix pada buildtypes debug
             isShrinkResources = false
-            applicationIdSuffix = ".debug"
+//            applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
             isDebuggable = true
             isMinifyEnabled = false
@@ -97,6 +105,13 @@ android {
                 "String",
                 "BASE_URL",
                 "${properties["BASE_URL"]}"
+            )
+
+            // build config for SERVER_AUTH
+            buildConfigField(
+                "String",
+                "SERVER_AUTH",
+                "${properties["SERVER_AUTH_CODE"]}"
             )
         }
 
@@ -133,7 +148,7 @@ dependencies {
     implementation("com.jakewharton.timber:timber:5.0.1")
     implementation("com.orhanobut:logger:2.2.0")
 
-    // Dagge-hilt
+    // Dagger-hilt
     implementation("com.google.dagger:hilt-android:2.42")
     kapt("com.google.dagger:hilt-android-compiler:2.42")
 

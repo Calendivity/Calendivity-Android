@@ -18,7 +18,7 @@ class UserPreferencesRepositoryImplementation @Inject constructor(private val us
     override suspend fun setUserOnboarding(isUserOnboarding: Boolean) {
         Result.runCatching {
             userDataStorePreferences.edit { preferences ->
-                preferences[Utils.KEY_USER_PREFERENCES] = isUserOnboarding
+                preferences[Utils.KEY_USER_PREFERENCES_ONBOARDING] = isUserOnboarding
             }
         }
     }
@@ -33,7 +33,32 @@ class UserPreferencesRepositoryImplementation @Inject constructor(private val us
                     throw exception
                 }
             }.map { preferences ->
-                preferences[Utils.KEY_USER_PREFERENCES]
+                preferences[Utils.KEY_USER_PREFERENCES_ONBOARDING]
+            }
+            val value = flow.firstOrNull() ?: false
+            value
+        }
+    }
+
+    override suspend fun setUserLogin(isLogin: Boolean) {
+        Result.runCatching {
+            userDataStorePreferences.edit { preferences ->
+                preferences[Utils.KEY_USER_PREFERENCES_LOGIN] = isLogin
+            }
+        }
+    }
+
+    override suspend fun getUserLogin(): Result<Boolean> {
+        return Result.runCatching {
+            val flow = userDataStorePreferences.data.catch { exception ->
+                // dataStore.data throws an IOException when an error is encountered when reading data
+                if (exception is IOException) {
+                    emit(emptyPreferences())
+                } else {
+                    throw exception
+                }
+            }.map { preferences ->
+                preferences[Utils.KEY_USER_PREFERENCES_LOGIN]
             }
             val value = flow.firstOrNull() ?: false
             value
