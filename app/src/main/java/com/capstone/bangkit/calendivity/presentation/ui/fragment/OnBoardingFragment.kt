@@ -1,9 +1,8 @@
 package com.capstone.bangkit.calendivity.presentation.ui.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -16,6 +15,7 @@ import com.capstone.bangkit.calendivity.presentation.di.OnboardingViewModel
 import com.capstone.bangkit.calendivity.presentation.utils.OnboardingEvent
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+
 
 @AndroidEntryPoint
 class OnBoardingFragment : Fragment() {
@@ -34,6 +34,12 @@ class OnBoardingFragment : Fragment() {
 
         // Inflate the layout for this fragment
         _binding = FragmentOnBoardingBinding.inflate(layoutInflater, container, false)
+
+        // change status bar color
+        val window: Window = activity?.window!!
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor =
+            ContextCompat.getColor(requireActivity(), R.color.md_theme_light_tertiaryContainer)
 
         return binding.root
     }
