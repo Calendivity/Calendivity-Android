@@ -8,6 +8,7 @@ object Utils {
     const val SERVER_AUTH = BuildConfig.SERVER_AUTH
     const val SCOPE_URI_CALENDAR = "https://www.googleapis.com/auth/calendar"
     const val BASE_URL = BuildConfig.BASE_URL
+    const val IS_DEBUG = BuildConfig.BUILD_TYPE == "debug"
 
     val KEY_USER_PREFERENCES_ONBOARDING = booleanPreferencesKey(
         name = "user_preferences_onboarding"
