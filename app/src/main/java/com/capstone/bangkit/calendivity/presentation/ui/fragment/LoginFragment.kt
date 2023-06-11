@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.capstone.bangkit.calendivity.databinding.FragmentLoginBinding
@@ -86,12 +87,18 @@ class LoginFragment : Fragment() {
             // Signed in successfully, show authenticated UI.
             val authCode = account.serverAuthCode
 
-            Timber.d("$authCode")
 
         } catch (e: ApiException) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Timber.w("signInResult:failed code=" + e.statusCode)
+
+            // show to user if google sign in is failed
+            Toast.makeText(
+                requireActivity(),
+                "Koneksi terputus silahkan coba lagi!",
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 
