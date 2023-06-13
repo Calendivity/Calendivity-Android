@@ -9,9 +9,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.capstone.bangkit.calendivity.R
 import com.capstone.bangkit.calendivity.databinding.FragmentPagetwoBinding
 
-
 class Pagetwo : Fragment() {
-
     private var _binding: FragmentPagetwoBinding? = null
     private val binding get() = _binding!!
 
@@ -35,5 +33,4 @@ class Pagetwo : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
 }

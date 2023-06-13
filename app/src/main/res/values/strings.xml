@@ -17,6 +17,7 @@
     <string name="get_started">Get Started</string>
     <string name="google">Google</string>
     <string name="on_boarding_fragment_bug">Lorem Ipsum is\nsimply dummy text</string>
+    <string name="koneksi_error">Koneksi terputus silahkan coba lagi!</string>
 
     <!--Content desc-->
     <string name="c_des_onboarding_1">Onboarding-1</string>

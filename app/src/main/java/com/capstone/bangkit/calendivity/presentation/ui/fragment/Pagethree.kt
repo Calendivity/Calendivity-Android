@@ -20,13 +20,12 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class Pagethree : Fragment() {
-    private val viewModel by viewModels<OnboardingViewModel>()
+    private val viewModelOnboarding by viewModels<OnboardingViewModel>()
     private var _binding: FragmentPagethreeBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         // animation Forward and Backward
         exitTransition = MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ true)
         reenterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
@@ -67,7 +66,7 @@ class Pagethree : Fragment() {
     ) {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.RESUMED) {
-                viewModel.cacheOnboarding(
+                viewModelOnboarding.cacheOnboarding(
                     isOnboarding = isOnboarding
                 ).collect { }
             }

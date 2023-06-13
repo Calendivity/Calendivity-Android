@@ -16,11 +16,9 @@ import com.capstone.bangkit.calendivity.presentation.utils.OnboardingEvent
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
-
 @AndroidEntryPoint
 class OnBoardingFragment : Fragment() {
-
-    private val viewModel by viewModels<OnboardingViewModel>()
+    private val viewModelOnboarding by viewModels<OnboardingViewModel>()
     private var _binding: FragmentOnBoardingBinding? = null
     private val binding get() = _binding!!
 
@@ -55,7 +53,7 @@ class OnBoardingFragment : Fragment() {
         when (event) {
             is OnboardingEvent.OnboardingCachedSuccess -> {
             }
-            is OnboardingEvent.CachedonboardingFetchSuccess -> {
+            is OnboardingEvent.CachedOnboardingFetchSuccess -> {
                 // if user already in onboarding page then user go login page otherwise onboarding page
                 if (event.isOnboarding) {
                     findNavController().navigate(R.id.action_onBoardingFragment_to_loginFragment)
@@ -69,7 +67,7 @@ class OnBoardingFragment : Fragment() {
     private fun getCachedOnboarding() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.RESUMED) {
-                viewModel.getCachedOnboarding().collect { event ->
+                viewModelOnboarding.getCachedOnboarding().collect { event ->
                     updateViewOnEvent(event)
                 }
             }

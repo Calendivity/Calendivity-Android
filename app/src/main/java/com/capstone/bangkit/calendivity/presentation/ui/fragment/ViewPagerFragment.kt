@@ -9,7 +9,6 @@ import com.capstone.bangkit.calendivity.databinding.FragmentViewPagerBinding
 import com.capstone.bangkit.calendivity.presentation.ui.adapter.ViewPagerAdapter
 
 class ViewPagerFragment : Fragment() {
-
     private var _binding: FragmentViewPagerBinding? = null
     private val binding get() = _binding!!
 
@@ -43,5 +42,4 @@ class ViewPagerFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
 }

@@ -86,6 +86,13 @@ android {
                 "SERVER_AUTH",
                 "${properties["SERVER_AUTH_CODE"]}"
             )
+
+            // build config for SCOPE CALENDAR
+            buildConfigField(
+                "String",
+                "SCOPE_CALENDAR",
+                "${properties["SCOPE_URI_CALENDAR"]}"
+            )
         }
 
         getByName("debug") {
@@ -112,6 +119,13 @@ android {
                 "String",
                 "SERVER_AUTH",
                 "${properties["SERVER_AUTH_CODE"]}"
+            )
+
+            // build config for SCOPE CALENDAR
+            buildConfigField(
+                "String",
+                "SCOPE_CALENDAR",
+                "${properties["SCOPE_URI_CALENDAR"]}"
             )
         }
 

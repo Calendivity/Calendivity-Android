@@ -1,6 +1,7 @@
 package com.capstone.bangkit.calendivity.presentation.ui.fragment
 
 import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,34 +9,35 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.capstone.bangkit.calendivity.R
 import com.capstone.bangkit.calendivity.databinding.FragmentLoginBinding
+import com.capstone.bangkit.calendivity.presentation.di.AuthTokenViewModel
+import com.capstone.bangkit.calendivity.presentation.utils.Status
 import com.capstone.bangkit.calendivity.presentation.utils.Utils
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.Scope
 import com.google.android.gms.tasks.Task
 import com.google.android.material.transition.MaterialSharedAxis
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
-
-    @OptIn(DelicateCoroutinesApi::class)
+    private var mGoogleSignInClient: GoogleSignInClient? = null
+    private val viewModelAuthToken by viewModels<AuthTokenViewModel>()
     private val resultLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == Activity.RESULT_OK && result.data != null) {
-            GlobalScope.launch(Dispatchers.Default) {
-                val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-                handleSignInResult(task)
-            }
+            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+            handleSignInResult(task)
         }
     }
 
@@ -74,9 +76,9 @@ class LoginFragment : Fragment() {
             .requestEmail()
             .build()
 
-        val mGoogleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
+        mGoogleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
 
-        val signInIntent = mGoogleSignInClient.signInIntent
+        val signInIntent = mGoogleSignInClient!!.signInIntent
         resultLauncher.launch(signInIntent)
     }
 
@@ -87,6 +89,27 @@ class LoginFragment : Fragment() {
             // Signed in successfully, show authenticated UI.
             val authCode = account.serverAuthCode
 
+            authCode?.let { viewModelAuthToken.getAuthToken(it) }
+
+            viewModelAuthToken.res.observe(this) {
+                when (it.status) {
+                    Status.SUCCESS -> {
+                        it.data?.let { value ->
+                            // save is login, access token and refresh token using pref data store
+                            saveUserPref(value.accessToken!!, value.refreshToken!!)
+
+                            // TODO : buat multiform page
+                            // if user not configure the multiform go to multiform page otherwise goto Homepage
+
+                        }
+                    }
+                    Status.LOADING -> {
+                    }
+                    Status.ERROR -> {
+                    }
+                }
+
+            }
 
         } catch (e: ApiException) {
             // The ApiException status code indicates the detailed failure reason.
@@ -96,10 +119,20 @@ class LoginFragment : Fragment() {
             // show to user if google sign in is failed
             Toast.makeText(
                 requireActivity(),
-                "Koneksi terputus silahkan coba lagi!",
+                resources.getString(R.string.koneksi_error),
                 Toast.LENGTH_LONG
             ).show()
         }
     }
 
+    // TODO : Sementara pake shared pref nnti di update lagi
+    private fun saveUserPref(aksesToken: String, refreshToken: String) {
+        val sharedPreferences =
+            requireActivity().getSharedPreferences(Utils.SHARED_PREF, Context.MODE_PRIVATE)
+        val edit = sharedPreferences.edit()
+        edit.putBoolean("isLogin", true)
+        edit.putString("akses_token", aksesToken)
+        edit.putString("refresh_token", refreshToken)
+        edit.apply()
+    }
 }

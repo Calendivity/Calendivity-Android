@@ -11,7 +11,6 @@ import com.capstone.bangkit.calendivity.R
 import com.capstone.bangkit.calendivity.databinding.FragmentPageOneBinding
 
 class Pageone : Fragment() {
-
     private var _binding: FragmentPageOneBinding? = null
     private val binding get() = _binding!!
 

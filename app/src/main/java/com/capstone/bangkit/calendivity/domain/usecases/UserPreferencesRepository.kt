@@ -8,4 +8,12 @@ interface UserPreferencesRepository {
     suspend fun setUserLogin(isLogin: Boolean)
 
     suspend fun getUserLogin(): Result<Boolean>
+
+    suspend fun setAccessToken(accessToken: String)
+
+    suspend fun getAccessToken(): Result<String>
+
+    suspend fun setRefreshToken(refreshToken: String)
+
+    suspend fun getRefreshToken(): Result<String>
 }

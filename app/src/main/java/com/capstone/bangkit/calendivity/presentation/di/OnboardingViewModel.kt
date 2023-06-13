@@ -7,7 +7,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-// view model
 @HiltViewModel
 class OnboardingViewModel @Inject constructor(private val userPreferencesRepository: UserPreferencesRepository) :
     ViewModel() {
@@ -20,6 +19,6 @@ class OnboardingViewModel @Inject constructor(private val userPreferencesReposit
     fun getCachedOnboarding() = flow {
         val result = userPreferencesRepository.getUserOnboarding()
         val isOnboarding = result.getOrNull()
-        emit(OnboardingEvent.CachedonboardingFetchSuccess(isOnboarding!!))
+        emit(OnboardingEvent.CachedOnboardingFetchSuccess(isOnboarding!!))
     }
 }
