@@ -6,10 +6,15 @@
  Splashscreen page
 
  Onboarding page
+
  Login page
+
  Biodata page
+
  Recomendation page
+
  Activity Recomendation
+
  Activity Duration Time Prediction
  
  # Dependencies
@@ -38,4 +43,5 @@
    * clone this repository
   
   #Demo
+
   https://drive.google.com/file/d/1ONcxE-n6CMZTKen_1h3VPVvys0s5ySYx/view?usp=sharing
