@@ -17,18 +17,31 @@
  
  # Dependencies
  Retrofit 2
+ 
  Glide
+ 
  Navigation Component
+ 
  Dagger Hilt
+ 
  Shared Preferences
+ 
  Preferences Data store
+ 
  Google Mobile Service
+ 
  Timber
+ 
  Kotlin Corutine
+ 
  dots indicator
+ 
  Okhttp 3
+ 
  Circle ImageView
+ 
  Stepview
+ 
  Material Design
  
  # Get Started
