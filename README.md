@@ -11,8 +11,6 @@
 
  Biodata page
 
- Recomendation page
-
  Activity Recomendation
 
  Activity Duration Time Prediction
@@ -33,7 +31,7 @@
  Stepview
  Material Design
  
- #Get Started
+ # Get Started
  * Tools & Prequisites
    * Android Studio
    * Java Development Kit (JDK) & Java Runtime Environment (JRE)
@@ -42,6 +40,6 @@
  * Installation process
    * clone this repository
   
-  #Demo
+  # Demo
 
   https://drive.google.com/file/d/1ONcxE-n6CMZTKen_1h3VPVvys0s5ySYx/view?usp=sharing
