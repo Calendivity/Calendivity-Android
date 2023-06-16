@@ -10,8 +10,13 @@
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/debug/res/layout/activity_m.xml" value="0.27447916666666666" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/debug/res/layout/activity_main.xml" value="0.2604166666666667" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/development/res/layout/activity_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/drawable/background_multi_form.xml" value="0.1335" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/drawable/background_on_boarding.xml" value="0.2175" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/drawable/default_dot.xml" value="0.1155" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/drawable/empty_tall_divider.xml" value="0.135" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/drawable/ic_baseline_list_alt_24.xml" value="0.145" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/drawable/ic_baseline_notifications_none_24.xml" value="0.1515" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1335" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/drawable/selected_dot.xml" value="0.1155" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/drawable/tab_selector.xml" value="0.1155" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/font/poppins.xml" value="0.3046875" />
@@ -20,16 +25,31 @@
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/font/poppins_medium.xml" value="0.3046875" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/font/poppins_semibold.xml" value="0.3046875" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout-v28/activity_main.xml" value="0.2734375" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/activity_buat.xml" value="0.264" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/activity_main.xml" value="0.1574074074074074" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/activity_test.xml" value="0.72" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/card_profile.xml" value="0.38030560271646857" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_aktivitas_pertama.xml" value="0.2" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_biodata.xml" value="0.264" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_blank.xml" value="0.27447916666666666" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_buat_act.xml" value="0.22530996152201796" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_buat_aktivitas.xml" value="0.2" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_calendar.xml" value="0.21376656690893545" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_login.xml" value="0.264" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_multi_step_form.xml" value="0.2565789473684211" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_on_boarding.xml" value="0.22530996152201796" />
-        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_page_one.xml" value="0.22530996152201796" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_page_one.xml" value="0.264" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_pagethree.xml" value="0.2439814814814815" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_pagetwo.xml" value="0.2439814814814815" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_selesai.xml" value="0.264" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_setting.xml" value="0.264" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_testing.xml" value="0.22530996152201796" />
         <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/fragment_view_pager.xml" value="0.2668918918918919" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/list_aktivitas.xml" value="0.536" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/layout/list_aktivitas_hari_ini.xml" value="0.4" />
+        <entry key="..\:/Project/Bangkit/Capstone/Calendivity/app/src/main/res/menu/menu.xml" value="0.22445489525438223" />
       </map>
     </option>
   </component>

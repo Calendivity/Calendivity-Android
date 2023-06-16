@@ -1,8 +1,11 @@
 package com.capstone.bangkit.calendivity.presentation.ui.activity
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.capstone.bangkit.calendivity.R
 import com.capstone.bangkit.calendivity.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -36,5 +39,40 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val a = this.findViewById<ConstraintLayout>(R.id.coba)
+
+        a?.visibility = View.INVISIBLE
+//        val fragment =
+//            this.supportFragmentManager.findFragmentById(R.id.fragmentContainerView2) as? NavHostFragment
+//        val currentFragment =
+//            fragment?.childFragmentManager?.fragments?.get(0) as? IOnBackPressed
+//        if (currentFragment != null) {
+//            currentFragment.onBackPressed().takeIf { !it }?.let {
+//                super.onBackPressed()
+//            }
+//        } else {
+//            val fragments =
+//                this.supportFragmentManager.findFragmentById(R.id.multi_form)
+//            (fragments as? IOnBackPressed)?.onBackPressed()?.let {
+//                if (it) {
+//                    Timber.d("test")
+//                    MaterialAlertDialogBuilder(this)
+//                        .setTitle(resources.getString(R.string.biodata_title))
+//                        .setMessage(resources.getString(R.string.biodata_message))
+//                        .setNeutralButton(resources.getString(R.string.btn_tidak)) { _, _ ->
+//
+//                        }.setPositiveButton(resources.getString(R.string.btn_ya)) { _, _ ->
+//                            super.onBackPressed()
+//                        }
+//                } else {
+//                    super.onBackPressed()
+//                }
+//            }
+//            super.onBackPressed()
+//        }
     }
 }

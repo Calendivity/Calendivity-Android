@@ -1,5 +1,6 @@
 package com.capstone.bangkit.calendivity.presentation.utils
 
+import android.view.View
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.capstone.bangkit.calendivity.BuildConfig
@@ -27,4 +28,9 @@ object Utils {
     val KEY_USER_PREFERENCES_REFRESHTOKEN = stringPreferencesKey(
         name = "user_preferences_refreshtoken"
     )
+
+    fun showLoading(view: View, isLoading: Boolean) =
+        if (isLoading) view.visibility = View.VISIBLE
+        else view.visibility = View.INVISIBLE
+
 }

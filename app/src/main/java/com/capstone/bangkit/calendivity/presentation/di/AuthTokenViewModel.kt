@@ -14,7 +14,6 @@ import javax.inject.Inject
 @HiltViewModel
 class AuthTokenViewModel @Inject constructor(private val mainRepo: MainRepo) : ViewModel() {
     private val _res = MutableLiveData<Resource<AuthTokenDataModel>>()
-
     val res: LiveData<Resource<AuthTokenDataModel>>
         get() = _res
 

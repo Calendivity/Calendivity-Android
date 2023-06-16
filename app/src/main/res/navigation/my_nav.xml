@@ -17,6 +17,11 @@
             app:destination="@id/loginFragment"
             app:popUpTo="@id/onBoardingFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_onBoardingFragment_to_multiStepForm"
+            app:destination="@id/multiStepForm"
+            app:popUpTo="@id/onBoardingFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/viewPagerFragment"
@@ -33,5 +38,16 @@
         android:id="@+id/loginFragment"
         android:name="com.capstone.bangkit.calendivity.presentation.ui.fragment.LoginFragment"
         android:label="LoginFragment"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_multiStepForm"
+            app:destination="@id/multiStepForm"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/multiStepForm"
+        android:name="com.capstone.bangkit.calendivity.presentation.ui.fragment.MultiStepForm"
+        android:label="fragment_multi_step_form"
+        tools:layout="@layout/fragment_multi_step_form" />
 </navigation>

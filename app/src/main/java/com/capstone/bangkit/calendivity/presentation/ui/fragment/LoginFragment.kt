@@ -3,13 +3,13 @@ package com.capstone.bangkit.calendivity.presentation.ui.fragment
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.capstone.bangkit.calendivity.R
 import com.capstone.bangkit.calendivity.databinding.FragmentLoginBinding
 import com.capstone.bangkit.calendivity.presentation.di.AuthTokenViewModel
@@ -46,6 +46,8 @@ class LoginFragment : Fragment() {
         // animation Forward and Backward
         enterTransition = MaterialSharedAxis(MaterialSharedAxis.X, true)
         returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, true)
+        exitTransition = MaterialSharedAxis(MaterialSharedAxis.Y, /* forward= */ true)
+        reenterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
     }
 
     override fun onCreateView(
@@ -54,6 +56,11 @@ class LoginFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
+
+        val window: Window = activity?.window!!
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor =
+            ContextCompat.getColor(requireActivity(), R.color.md_theme_light_tertiaryContainer)
 
         // sign in google
         _binding?.btnSignin?.setOnClickListener {
@@ -92,20 +99,30 @@ class LoginFragment : Fragment() {
             authCode?.let { viewModelAuthToken.getAuthToken(it) }
 
             viewModelAuthToken.res.observe(this) {
+                // show progress indicator
+                Utils.showLoading(binding.progressIndicator, it.status == Status.LOADING)
+                Utils.showLoading(binding.overlay, it.status == Status.LOADING)
                 when (it.status) {
                     Status.SUCCESS -> {
                         it.data?.let { value ->
                             // save is login, access token and refresh token using pref data store
                             saveUserPref(value.accessToken!!, value.refreshToken!!)
 
-                            // TODO : buat multiform page
                             // if user not configure the multiform go to multiform page otherwise goto Homepage
-
+                            findNavController().navigate(
+                                R.id.action_loginFragment_to_multiStepForm
+                            )
                         }
                     }
                     Status.LOADING -> {
                     }
                     Status.ERROR -> {
+                        // show message when something error
+                        Toast.makeText(
+                            requireActivity(),
+                            resources.getString(R.string.koneksi_error),
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
                 }
 

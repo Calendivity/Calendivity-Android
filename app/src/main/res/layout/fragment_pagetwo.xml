@@ -21,7 +21,7 @@
         android:layout_width="300dp"
         android:layout_height="225dp"
         android:contentDescription="@string/c_des_onboarding_2"
-        android:src="@drawable/imagepagetwo"
+        android:src="@drawable/imagepageone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline1" />
@@ -30,7 +30,7 @@
         android:id="@+id/headline_page_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:text="@string/headline_on_boarding_2"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.MyApp.Headline.Small.Bold"

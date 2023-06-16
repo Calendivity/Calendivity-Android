@@ -30,7 +30,7 @@
         android:id="@+id/headline_page_three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:text="@string/headline_on_boarding_3"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.MyApp.Headline.Small.Bold"

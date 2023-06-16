@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/aktivitas"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_light_background"
+    tools:context=".presentation.ui.fragment.MultiStepForm">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/headline_multi_step_form" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.shuhart.stepview.StepView
+        android:id="@+id/step_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headline"
+        app:sv_animationType="All"
+        app:sv_doneCircleColor="@color/md_theme_light_tertiary"
+        app:sv_doneCircleRadius="18dp"
+        app:sv_doneStepLineColor="@color/md_theme_light_tertiary"
+        app:sv_doneStepMarkColor="@color/md_theme_light_onPrimary"
+        app:sv_doneTextColor="@color/md_theme_light_onSurfaceVariant"
+        app:sv_nextStepCircleColor="@color/md_theme_dark_onSurface"
+        app:sv_nextStepCircleEnabled="true"
+        app:sv_nextStepLineColor="@color/md_theme_dark_onSurface"
+        app:sv_nextTextColor="@color/md_theme_light_onSurfaceVariant"
+        app:sv_selectedCircleColor="@color/md_theme_light_primary"
+        app:sv_selectedCircleRadius="18dp"
+        app:sv_selectedStepNumberColor="@color/md_theme_light_onPrimary"
+        app:sv_selectedTextColor="@color/md_theme_light_primary"
+        app:sv_stepLineWidth="2dp"
+        app:sv_stepNumberTextSize="14sp"
+        app:sv_stepPadding="4dp"
+        app:sv_stepViewStyle="@style/StepView"
+        app:sv_steps="@array/multi_form"
+        app:sv_stepsNumber="3"
+        app:sv_typeface="@font/poppins_medium" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/md_theme_light_onPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_back" />
+
+    <FrameLayout
+        android:id="@+id/multi_form"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/step_view" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="152dp"
+        android:layout_height="65dp"
+        android:text="@string/btn_next"
+        android:textAppearance="@style/TextAppearance.MyApp.Label.Large.Bold"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_back" />
+
+    <Button
+        android:id="@+id/btn_back"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="152dp"
+        android:layout_height="65dp"
+        android:text="@string/btn_back"
+        android:textAppearance="@style/TextAppearance.MyApp.Label.Large.Bold"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:layout_constraintEnd_toStartOf="@id/btn_next"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/coba"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/md_theme_light_background"
+        android:visibility="invisible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

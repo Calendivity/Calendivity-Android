@@ -4,25 +4,179 @@
     <string name="app_name">Calendivity</string>
 
     <!--Text-->
-    <string name="headline_on_boarding_1">Lorem Ipsum is\nsimply dummy text</string>
-    <string name="body_on_boarding_1">Lorem Ipsum is simply dummy text\n of the printing and typesetting industry.\n Lorem Ipsum has been the industry\'s</string>
-    <string name="headline_on_boarding_2">Lorem Ipsum is\nsimply dummy text</string>
-    <string name="body_on_boarding_2">Lorem Ipsum is simply dummy text\n of the printing and typesetting industry.\n Lorem Ipsum has been the industry\'s</string>
-    <string name="headline_on_boarding_3">Lorem Ipsum is\nsimply dummy text</string>
-    <string name="body_on_boarding_3">Lorem Ipsum is simply dummy text\n of the printing and typesetting industry.\n Lorem Ipsum has been the industry\'s</string>
-    <string name="headline_login_page">Lorem Ipsum is\nsimply dummy text</string>
-    <string name="body_login_page">Lorem Ipsum is simply dummy text\n of the printing and typesetting industry.\n Lorem Ipsum has been the industry\'s</string>
-    <string name="btn_next">Next</string>
+    <string name="headline_on_boarding_1">Kelola Aktivitas</string>
+    <string name="body_on_boarding_1">Tantang diri Anda untuk\nmeningkatkan produktivitas</string>
+    <string name="headline_on_boarding_2">Kelola Grup</string>
+    <string name="body_on_boarding_2">Temukan cara mudah untuk\nmengelola aktivitas grup</string>
+    <string name="headline_on_boarding_3">Kelola Jadwal</string>
+    <string name="body_on_boarding_3">Optimalisasikan waktu Anda\ndengan penjadwalan yang efisien</string>
+    <string name="headline_login_page">Selamat Datang!</string>
+    <string name="body_login_page">Masuk dan mulailah mengelola\naktivitas dengan cara yang seru</string>
+    <string name="btn_next">Lanjut</string>
     <string name="login_to_continue">Login to continue</string>
-    <string name="get_started">Get Started</string>
+    <string name="get_started">Mulai</string>
     <string name="google">Google</string>
     <string name="on_boarding_fragment_bug">Lorem Ipsum is\nsimply dummy text</string>
     <string name="koneksi_error">Koneksi terputus silahkan coba lagi!</string>
+    <string name="headline_multi_step_form">Calendivity</string>
+    <string name="headline_biodata">Biodata</string>
+    <string name="headline_aktivitas_pertama">Rekomendasi Aktivitas Pertama Kamu</string>
+    <string name="headline_selesai">Mulai Aktivitas</string>
+    <string name="data_kosong">Required *</string>
+    <string name="validate_data">Mohon isi biodata dengan lengkap</string>
+    <string name="biodata_title">Lanjutkan</string>
+    <string name="biodata_message">Apakah biodata sudah benar?</string>
+    <string name="btn_ya">Ya</string>
+    <string name="btn_tidak">Tidak</string>
+    <string name="buat_aktivitas">Buat aktivitas baru</string>
 
     <!--Content desc-->
     <string name="c_des_onboarding_1">Onboarding-1</string>
     <string name="c_des_onboarding_2">Onboarding-2</string>
     <string name="c_des_onboarding_3">Onboarding-3</string>
     <string name="c_des_login_page">Login page</string>
+    <string name="hint_name">Nama</string>
+    <string name="hint_umur">Umur</string>
+    <string name="hint_last_education">Pendidikan Terakhir</string>
+    <string name="hint_job">Pekerjaan</string>
+    <string name="hint_gender">Jenis Kelamin</string>
+    <string name="hint_current_education">Pendidikan</string>
+    <string name="hint_employment">Jenis Pekerjaan</string>
+    <string name="btn_back">Kembali</string>
+
+    <!--Multi form step-->
+    <array name="multi_form">
+        <item>Biodata</item>
+        <item>Aktivitas Pertama</item>
+        <item>Selesai</item>
+    </array>
+
+    <!--Value-->
+    <array name="jenis_kelamin_value">
+        <item>Pria</item>
+        <item>Wanita</item>
+    </array>
+
+    <array name="pendidikan_value">
+        <item>Tidak Sekolah/Sudah Lulus</item>
+        <item>Sekolah</item>
+        <item>Kuliah</item>
+    </array>
+
+    <array name="pendidikan_terakhir_value">
+        <item>Kurang dari kelas 1 SD</item>
+        <item>Kelas 1, 2, 3, atau 4 SD</item>
+        <item>Kelas 5 atau 6 SD</item>
+        <item>Kelas 7 atau 8 SMP</item>
+        <item>Kelas 9 SMP</item>
+        <item>Kelas 10 SMA</item>
+        <item>Kelas 11 SMA</item>
+        <item>Kelas 12 SMA</item>
+        <item>Lulusan SMA</item>
+        <item>Mahasiswa belum lulus</item>
+        <item>Diploma 3 (D3) kejuruan</item>
+        <item>Diploma 3 (D3) akademik</item>
+        <item>Sarjana (S1)</item>
+        <item>Master (S2)</item>
+        <item>Doktor (S3)</item>
+        <item>Gelar sekolah profesional (dr, drh, drg, dll.)</item>
+    </array>
+
+    <array name="pekerjaan_value">
+        <item>Tidak Bekerja</item>
+        <item>Manajemen</item>
+        <item>Bisnis dan Keuangan</item>
+        <item>Komputer dan Matematika</item>
+        <item>Arsitektur dan Teknik</item>
+        <item>Ilmu Kehidupan, Fisika, dan Sosial</item>
+        <item>Masyarakat dan Layanan Sosial</item>
+        <item>Hukum</item>
+        <item>Pendidikan dan Perpustakaan</item>
+        <item>Seni, Desain, Hiburan, Olahraga, dan Media</item>
+        <item>Praktisi Kesehatan dan Teknis</item>
+        <item>Pendukung Kesehatan</item>
+        <item>Layanan Perlindungan</item>
+        <item>Persiapan dan Pelayanan Makanan</item>
+        <item>Kebersihan dan Pemeliharaan Bangunan dan Taman</item>
+        <item>Perawat Pribadi dan Layanan</item>
+        <item>Penjualan</item>
+        <item>Kantor dan Dukungan Administrasi</item>
+        <item>Pertanian, Perikanan, dan Kehutanan</item>
+        <item>Konstruksi dan Ekstraksi</item>
+        <item>Pemasangan, Pemeliharaan, dan Perbaikan</item>
+        <item>Produksi</item>
+        <item>Transportasi dan Ekspedisi</item>
+    </array>
+
+    <array name="jenis_pekerjaan_value">
+        <item>Tidak Bekerja</item>
+        <item>Paruh Waktu</item>
+        <item>Penuh Waktu</item>
+    </array>
+
+    <!--Key-->
+    <array name="jenis_kelamin_key">
+        <item>1</item>
+        <item>2</item>
+    </array>
+
+    <array name="pendidikan_key">
+        <item>-1</item>
+        <item>1</item>
+        <item>2</item>
+    </array>
+
+    <array name="pendidikan_terakhir_key">
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>46</item>
+        <item>45</item>
+    </array>
+
+    <array name="pekerjaan_key">
+        <item>-1</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+    </array>
+
+    <array name="jenis_pekerjaan_key">
+        <item>-1</item>
+        <item>2</item>
+        <item>1</item>
+    </array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

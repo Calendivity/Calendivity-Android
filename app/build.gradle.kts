@@ -194,6 +194,15 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
 
+    //Circle Image
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
+    // glide
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+
+    // horizontal step view android
+    implementation ("com.github.shuhart:stepview:1.5.1")
+
     // test implementation
     testImplementation("junit:junit:4.13.2")
 
